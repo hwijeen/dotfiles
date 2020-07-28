@@ -1,0 +1,9 @@
+[user]
+	email = hwijeen@gmail.com
+	name = hwijeen
+[pager]
+	branch = false
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = true
