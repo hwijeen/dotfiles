@@ -85,7 +85,7 @@ POWERLEVEL9K_PYTHON_ICON=''
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker alias-tips)
+plugins=(git docker alias-tips zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -138,7 +138,6 @@ unset __conda_setup
 # <<< conda init <<<
 
 # Cosmetics
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export LSCOLORS=ExGxFxdxCxDxDxxbaDecac
 
 # Don't write .pyc files
@@ -150,7 +149,6 @@ conda activate ML
 # Frequently used directories
 export blog=/Users/hwijeen/Documents/hwijeen.github.io
 export cmu=/Users/hwijeen/Documents/school/cmu
-export py=/Users/hwijeen/opt/anaconda/env/ML/lib/python3.6/site-packages
 export gre=/Users/hwijeen/Documents/project\ abroad/gre
 
 # Alias tip
@@ -162,9 +160,6 @@ alias py='python'
 alias mv='mv -i'
 alias cp='cp -i'
 alias jobs='jobs -l'
-
-#export PATH=/Users/hwii/.rbenv/shims:/Users/hwii/anaconda/bin:$PATH
-#export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Personal functions
 notebook(){
