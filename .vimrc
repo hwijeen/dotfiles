@@ -37,6 +37,7 @@ Plug 'tpope/vim-fugitive'  "Git
 Plug 'tpope/vim-rhubarb' "Github
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter' "Gitdiff
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
@@ -50,6 +51,8 @@ Plug 'cjrh/vim-conda'
 Plug 'tpope/vim-surround'  " putting '(. etc around
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/seoul256.vim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
@@ -130,9 +133,9 @@ endif
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
-colorscheme peachpuff
+colorscheme nord
 syntax on
-set ruler
+" set ruler
 set number
 
 let no_buffers_menu=1
@@ -375,11 +378,12 @@ let Grep_Skip_Dirs = '.git node_modules'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'nord'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tmuxline = 1
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
@@ -387,9 +391,9 @@ let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline_left_sep          = '▶'
+  " let g:airline_left_sep          = '▶'
   let g:airline_left_alt_sep      = '»'
-  let g:airline_right_sep         = '◀'
+  " let g:airline_right_sep         = '◀'
   let g:airline_right_alt_sep     = '«'
   let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
   let g:airline#extensions#readonly#symbol   = '⊘'
@@ -413,6 +417,14 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+let g:tmuxline_preset = {
+    \'a'       : '#S',
+    \'win'     : ['#I', '#W'],
+    \'cwin'    : ['#I', '#W #F'],
+    \'y'       : '%Y-%m-%d %R',
+    \'z'       : '#H',
+    \'options' : {'status-justify' : 'left'}}
 
 " syntastic
 let g:syntastic_always_populate_loc_list=1
@@ -469,13 +481,5 @@ cnoreabbrev jq %!jq .
 " close location list and quickfix list
 nmap <leader>c :ccl<CR> <bar> :lcl<CR>
 
-
-" quickfix
-" autocmd BufReadPost quickfix map <CR> <CR>
-" nmap <leader>c :ccl<CR> <bar> :lcl<CR>
-" " autocmd BufReadPost quickfix nmap <leader>c :ccl<CR>
-" " autocmd BufReadPost quickfix nmap <leader>c :lclose<CR>
-" autocmd CmdlineEnter * map <CR> <CR>
-
-" delete trailing whitespaces
-" ":%s/\s\+$//e
+" hack to turn off airline status bar
+autocmd VimEnter * set laststatus=0
