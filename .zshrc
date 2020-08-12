@@ -171,8 +171,8 @@ alias jobs='jobs -l'
 
 # Personal functions
 notebook(){
-    echo "jupyter notebook &>/dev/null &"
-    jupyter notebook &>/dev/null &
+    echo "jupyter notebook --port "$1" --ip 0.0.0.0 &>/dev/null &"
+    jupyter notebook --port "$1" --ip 0.0.0.0 &>/dev/null &
 }
 
 tb(){

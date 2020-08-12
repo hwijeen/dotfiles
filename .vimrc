@@ -130,12 +130,15 @@ if has('unnamedplus')
 endif
   set clipboard=unnamed " mac clipboard
 
+set updatetime=100 " for fast tagbar sync
+
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
 colorscheme nord
 syntax on
-set noruler
+set ruler
+set rulerformat=%13(%l/%L\ %p%%%)
 set number
 
 let no_buffers_menu=1
@@ -186,7 +189,7 @@ endif
 
 if has("autocmd")
     if v:version > 701
-        autocmd Syntax * call matchadd('Todo', '\W\zs\(NOTE\|QUESTION\)')
+        autocmd Syntax * call matchadd('Todo', '\W\zs\(NOTE\|QUESTION\|Q\)')
     endif
 endif
 
@@ -386,7 +389,7 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#buffer_nr_show = 0
 " let g:airline#extensions#tabline#buffer_nr_format = '%s '
-let g:airline#extensions#tabline#fnamemod = ':.:~' " filename-modifiers
+let g:airline#extensions#tabline#fnamemod = ':~:.' " filename-modifiers
 
 let g:airline#extensions#tmuxline = 1
 let airline#extensions#tmuxline#color_template = 'normal'
@@ -499,3 +502,6 @@ nmap <leader>c :ccl<CR> <bar> :lcl<CR>
 
 " hack to turn off airline status bar
 autocmd VimEnter * set laststatus=0
+
+" automatically open fold
+let g:tagbar_autoshowtag=1
