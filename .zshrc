@@ -1,20 +1,8 @@
-# If you come from bash you might have to change your $PATH.
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/hwijeen/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="simple"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -40,6 +28,7 @@ ZSH_THEME="simple"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
+
 ZSH_DISABLE_COMPFIX="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -55,67 +44,11 @@ ZSH_DISABLE_COMPFIX="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git docker alias-tips zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export PATH='/usr/local/anaconda3/bin:$PATH'
-
-# Cosmetics
-# RPROMPT="%D{%K:%M} "
-RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
-
-# export LSCOLORS=ExGxFxdxCxDxDxxbaDecac
-export LSCOLORS=Gxfxcxdxbxegedabagacad
-
-# Don't write .pyc files
-export PYTHONDONTWRITEBYTECODE=1
-
-# Frequently used directories
-export blog=/Users/hwijeen/Documents/hwijeen.github.io
-export cmu=/Users/hwijeen/Documents/school/cmu
-export gre=/Users/hwijeen/Documents/project\ abroad/gre
-
-# Alias tip
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
-
 # Personal aliases
 alias typora="open -a typora"
 alias py="python"
@@ -123,6 +56,16 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias jobs="jobs -l"
 alias vim="/usr/local/bin/vim"
+
+# Personal variables
+export PATH="/usr/local/anaconda3/bin:$PATH"
+export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+export PYTHONDONTWRITEBYTECODE=1 # Don't write .pyc files
+export blog=/Users/hwijeen/Documents/hwijeen.github.io
+export cmu=/Users/hwijeen/Documents/school/cmu
+export gre=/Users/hwijeen/Documents/project\ abroad/gre
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
 # Personal functions
 notebook(){
