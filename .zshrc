@@ -10,32 +10,6 @@ export ZSH="/Users/hwijeen/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="simple"
 
-# manually pick colors from: https://github.com/Powerlevel9k/powerlevel9k/wiki/Stylizing-Your-Prompt#segment-color-customization
-# ZSH_THEME="powerlevel9k/powerlevel9k"
-# POWERLEVEL9K_MODE='nerdfont-complete'
-# POWERLEVEL9K_SHORTEN_DIR_LENGTH=10
-# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-# POWERLEVEL9K_STATUS_VERBOSE=false
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs anaconda time)
-# POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
-# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%{%F{249}%}\u250f"
-# POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%{%F{249}%}\u2517%{%F{default}%} "
-# POWERLEVEL9K_VCS_HIDE_TAGS=true
-# POWERLEVEL9K_VCS_SHOW_SUBMODULE_DIRTY=false
-# POWERLEVEL9K_VCS_CLEAN_BACKGROUND='108'
-# POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='187'
-# POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='104'
-# POWERLEVEL9K_DIR_HOME_BACKGROUND='188'
-# POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='188'
-# POWERLEVEL9K_ANACONDA_LEFT_DELIMITER=''
-# POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER=''
-# POWERLEVEL9K_ANACONDA_BACKGROUND='188'
-# POWERLEVEL9K_TIME_BACKGROUND='254'
-# POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='247'
-# POWERLEVEL9K_VCS_GIT_ICON=$'\uF113 '
-# POWERLEVEL9K_PYTHON_ICON=''
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -66,6 +40,7 @@ ZSH_THEME="simple"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
+ZSH_DISABLE_COMPFIX="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -88,7 +63,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker alias-tips zsh-syntax-highlighting)
+plugins=(git docker alias-tips zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,38 +96,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# added by Anaconda3 2019.10 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/hwijeen/opt/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    # \eval "$__conda_setup"
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/hwijeen/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/hwijeen/opt/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        # \export PATH="/Users/hwijeen/opt/anaconda3/bin:$PATH"
-        export PATH="/Users/hwijeen/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
+export PATH='/usr/local/anaconda3/bin:$PATH'
 
 # Cosmetics
 # RPROMPT="%D{%K:%M} "
 RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
-
 
 # export LSCOLORS=ExGxFxdxCxDxDxxbaDecac
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 # Don't write .pyc files
 export PYTHONDONTWRITEBYTECODE=1
-
-# Automatically activate conda environment
-conda activate ML
 
 # Frequently used directories
 export blog=/Users/hwijeen/Documents/hwijeen.github.io
@@ -164,10 +118,11 @@ export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
 # Personal aliases
 alias typora="open -a typora"
-alias py='python'
-alias mv='mv -i'
-alias cp='cp -i'
-alias jobs='jobs -l'
+alias py="python"
+alias mv="mv -i"
+alias cp="cp -i"
+alias jobs="jobs -l"
+alias vim="/usr/local/bin/vim"
 
 # Personal functions
 notebook(){
