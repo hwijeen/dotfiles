@@ -282,17 +282,18 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Conceal a word with `?`
-nmap <leader>x yiw :syn match Todo \<C-r>0\ conceal cchar=?<CR>
+nnoremap <leader>x yiw :syn match Todo \<C-r>0\ conceal cchar=?<CR>
+vnoremap <leader>x y :syn match Todo \<C-r>0\ conceal cchar=?<CR>
 
 " noremap YY "+y<CR>
 " noremap <leader>p "+gP<CR>
 " noremap XX "+x<CR>
 
 "buffer navigate
-nmap <leader>l :bnext<CR>
-nmap <leader>z :bprevious<CR>
-nmap <leader>T :enew<CR>
-noremap <leader>q :bp\|bd #<CR>
+nnoremap <leader>l :bnext<CR>
+nnoremap <leader>z :bprevious<CR>
+nnoremap <leader>T :enew<CR>
+nnoremap <leader>q :bp\|bd #<CR>
 
 " if has('macunix')
 "   " pbcopy for OSX copy/paste
@@ -498,7 +499,7 @@ cnoreabbrev nord colorscheme nord <bar> AirlineTheme nord
 cnoreabbrev jq %!jq .
 
 " close location list and quickfix list
-nmap <leader>c :ccl<CR> <bar> :lcl<CR>
+nnoremap <leader>c :ccl<CR> <bar> :lcl<CR>
 
 " hack to turn off airline status bar
 autocmd VimEnter * set laststatus=0
