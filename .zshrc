@@ -70,8 +70,8 @@ export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
 # Personal functions
 notebook(){
-    echo "jupyter notebook --port "$1" --ip 0.0.0.0 &>/dev/null &"
-    jupyter notebook --port "$1" --ip 0.0.0.0 &>/dev/null &
+    echo "jupyter notebook --no-browser --port "$1" --ip 0.0.0.0 &>/dev/null &"
+    jupyter notebook --no-browser --port "$1" --ip 0.0.0.0 &>/dev/null &
 }
 
 tb(){
