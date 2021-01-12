@@ -459,6 +459,8 @@ cnoreabbrev Sc sc
 " Tagbar
 cnoreabbrev tb TagbarToggle
 let g:tagbar_autofocus = 1
+let g:tagbar_map_nexttag = "<C-j>"
+let g:tagbar_map_prevtag = "<C-k>"
 
 " jedi-vim
 autocmd FileType python setlocal completeopt-=preview " do not open docstring on autocompletion
