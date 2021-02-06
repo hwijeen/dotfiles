@@ -351,6 +351,10 @@ let g:NERDTreeWinSize = 40
 let g:NERDTreeNodeDelimiter = "\u00a0"
 cnoreabbrev nt NERDTreeToggle
 cnoreabbrev ntf NERDTreeFind
+autocmd VimEnter * call NERDTreeAddKeyMap({
+        \ 'key': 'yy',
+        \ 'callback': 'NERDTreeCopyPath',
+        \ 'quickhelpText': 'put full path of current node into the default register' })
 
 "" vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
