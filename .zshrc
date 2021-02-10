@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/hwijeen/.oh-my-zsh"
+export ZSH="/Users/user/.oh-my-zsh"
 
 ZSH_THEME="simple"
 
@@ -59,13 +59,9 @@ alias ruby="/usr/local/Cellar/ruby/2.7.2/bin/ruby"
 alias gem="/usr/local/Cellar/ruby/2.7.2/bin/gem"
 
 # Personal variables
-export PATH="/usr/local/anaconda3/bin:$PATH"
 export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1 # Don't write .pyc files
-export blog="/Users/hwijeen/Documents/Documents - hwiipro/hwijeen.github.io"
-export cmu="/Users/hwijeen/school/cmu"
-export gre="/Users/hwijeen/project abroad/gre"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
 # Personal functions
@@ -98,3 +94,6 @@ gdrive(){
     curl -L -b /tmp/cookies "https://drive.google.com$(cat /tmp/intermezzo.html | grep -Po 'uc-download-link" [^>]* href="\K[^"]*' | sed 's/\&amp;/\&/g')" > $2
 }
 
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile;
+fi
