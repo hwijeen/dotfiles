@@ -355,9 +355,9 @@ cnoreabbrev ntf NERDTreeFind
 "" vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gsh :Gpush<CR>
+noremap <Leader>gp :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gst :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiffsplit!<CR>
 noremap <Leader>gr :Gremove<CR>
@@ -447,11 +447,11 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=2
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_checkers=['pylint']
+let g:syntastic_aggregate_errors = 0
+let g:syntastic_python_checkers=['mypy', 'pylint']
 let g:syntastic_html_checkers = ['tidy']
 let g:syntastic_sh_checkers = ['shellcheck']
-let g:syntastic_quiet_messages = {"!level":  "errors"}
+" let g:syntastic_quiet_messages = {"!level":  "errors"}
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 cnoreabbrev sc w <bar> SyntasticCheck
 cnoreabbrev Sc sc
