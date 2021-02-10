@@ -43,7 +43,7 @@ ZSH_DISABLE_COMPFIX="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-plugins=(git docker alias-tips zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker alias-tips zsh-syntax-highlighting zsh-autosuggestions fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,6 +63,7 @@ export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1 # Don't write .pyc files
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
+export FZF_DEFAULT_OPTS='--height 40%'
 
 # Personal functions
 notebook(){
