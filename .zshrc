@@ -64,6 +64,7 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1 # Don't write .pyc files
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 export FZF_DEFAULT_OPTS='--height 40%'
+export FZF_COMPLETION_TRIGGER=';;'
 
 # Personal functions
 notebook(){
