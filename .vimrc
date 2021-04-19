@@ -132,6 +132,7 @@ endif
 
 set updatetime=100 " for fast tagbar sync
 
+set textwidth=99 " for gwgw
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
@@ -463,6 +464,7 @@ cnoreabbrev Sc sc
 " Tagbar
 cnoreabbrev tb TagbarToggle
 let g:tagbar_autofocus = 1
+let g:tagbar_sort = 0
 let g:tagbar_map_nexttag = "<C-j>"
 let g:tagbar_map_prevtag = "<C-k>"
 
