@@ -351,6 +351,7 @@ let g:NERDTreeWinSize = 40
 let g:NERDTreeNodeDelimiter = "\u00a0"
 cnoreabbrev nt NERDTreeToggle
 cnoreabbrev ntf NERDTreeFind
+cnoreabbrev ntj NERDTreeFocus
 autocmd VimEnter * call NERDTreeAddKeyMap({
         \ 'key': 'yy',
         \ 'callback': 'NERDTreeCopyPath',
