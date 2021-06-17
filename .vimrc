@@ -483,7 +483,7 @@ let g:jedi#popup_select_first = 1
 
 " Syntax highlight
 " Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
+" let g:polyglot_disabled = ['python']
 let python_highlight_all = 1
 
 " supertab
