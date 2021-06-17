@@ -54,11 +54,9 @@ alias py="python"
 alias mv="mv -i"
 alias cp="cp -i"
 alias jobs="jobs -l"
-alias vim="/usr/local/bin/vim"
-alias ruby="/usr/local/Cellar/ruby/2.7.2/bin/ruby"
-alias gem="/usr/local/Cellar/ruby/2.7.2/bin/gem"
 
 # Personal variables
+export PATH="/opt/homebrew/bin:$PATH"
 export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1 # Don't write .pyc files
@@ -89,13 +87,7 @@ pf(){
     fi
 }
 
-gdrive(){
-    echo "Downloading gdrive file as $2"
-    # wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=$1' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=$1" -O $2 && rm -rf /tmp/cookies.txt
-    curl -c /tmp/cookies "https://drive.google.com/uc?export=download&id=$1" > /tmp/intermezzo.html
-    curl -L -b /tmp/cookies "https://drive.google.com$(cat /tmp/intermezzo.html | grep -Po 'uc-download-link" [^>]* href="\K[^"]*' | sed 's/\&amp;/\&/g')" > $2
-}
-
+# Secondary profile
 if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile;
 fi
