@@ -50,8 +50,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'cjrh/vim-conda'
 Plug 'tpope/vim-surround'  " putting '(. etc around
 Plug 'tpope/vim-repeat'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
@@ -493,12 +491,6 @@ let g:SuperTabCrMapping = 1
 "vim-conda
 cnoreabbrev conda CondaChangeEnv
 let g:conda_startup_msg_suppress = 1
-
-" Goyo
-cnoreabbrev goyo colorscheme seoul256 <bar> Goyo
-
-" Seoul256
-cnoreabbrev seoul256 colorscheme seoul256 <bar> AirlineTheme minimalist
 
 " Nord
 cnoreabbrev nord colorscheme nord <bar> AirlineTheme nord
