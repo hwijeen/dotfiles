@@ -498,6 +498,9 @@ cnoreabbrev nord colorscheme nord <bar> AirlineTheme nord
 "requires jq install
 cnoreabbrev jq %!jq .
 
+" Copy mode
+cnoreabbrev copy set invnumber <bar> IndentLinesToggle
+
 " close location list and quickfix list
 nnoremap <leader>c :ccl<CR> <bar> :lcl<CR>
 
