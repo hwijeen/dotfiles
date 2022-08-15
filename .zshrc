@@ -43,7 +43,7 @@ ZSH_DISABLE_COMPFIX="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-plugins=(git docker alias-tips zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker alias-tips zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
 
