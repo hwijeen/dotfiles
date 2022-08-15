@@ -8,3 +8,5 @@
 	tool = vimdiff
 [difftool]
 	prompt = true
+[credential]
+	helper = store
