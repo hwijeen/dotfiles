@@ -63,9 +63,6 @@ export PATH="/usr/local/anaconda3/bin:$PATH"
 export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1 # Don't write .pyc files
-export blog="/Users/hwijeen/Documents/Documents - hwiipro/hwijeen.github.io"
-export cmu="/Users/hwijeen/school/cmu"
-export gre="/Users/hwijeen/project abroad/gre"
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 
 # Personal functions
@@ -90,11 +87,3 @@ pf(){
         ssh -f -N -L "$2":localhost:$2 $1
     fi
 }
-
-gdrive(){
-    echo "Downloading gdrive file as $2"
-    # wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=$1' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=$1" -O $2 && rm -rf /tmp/cookies.txt
-    curl -c /tmp/cookies "https://drive.google.com/uc?export=download&id=$1" > /tmp/intermezzo.html
-    curl -L -b /tmp/cookies "https://drive.google.com$(cat /tmp/intermezzo.html | grep -Po 'uc-download-link" [^>]* href="\K[^"]*' | sed 's/\&amp;/\&/g')" > $2
-}
-
