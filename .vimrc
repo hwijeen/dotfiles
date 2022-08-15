@@ -46,7 +46,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'cjrh/vim-conda'
 Plug 'tpope/vim-surround'  " putting '(. etc around
 Plug 'tpope/vim-repeat'
@@ -153,7 +153,7 @@ let g:CSApprox_loaded = 1
 
 " IndentLine
 let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 0
+let g:indentLine_concealcursor = ''
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
