@@ -3,6 +3,7 @@
 	name = hwijeen
 [pager]
 	branch = false
+    diff = false
 [diff]
 	tool = vimdiff
 [difftool]
