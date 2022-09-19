@@ -359,9 +359,9 @@ autocmd VimEnter * call NERDTreeAddKeyMap({
 "" vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Git commit<CR>
-noremap <Leader>gsh :Gpush<CR>
+noremap <Leader>gp :Git push<CR>
 noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
+" noremap <Leader>gst :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiffsplit!<CR>
 noremap <Leader>gr :Gremove<CR>
