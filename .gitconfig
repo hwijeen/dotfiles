@@ -4,9 +4,12 @@
 [pager]
 	branch = false
     diff = false
+    status = false
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = true
 [credential]
 	helper = store
+[core]
+    editor = vim
