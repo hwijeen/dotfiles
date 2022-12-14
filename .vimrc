@@ -47,7 +47,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 " Plug 'sheerun/vim-polyglot'
-Plug 'cjrh/vim-conda'
+" Plug 'cjrh/vim-conda'
 Plug 'tpope/vim-surround'  " putting '(. etc around
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/goyo.vim'
@@ -58,6 +58,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'xolox/vim-misc' " required by vim-session
 Plug 'xolox/vim-session'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
