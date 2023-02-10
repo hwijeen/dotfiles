@@ -13,3 +13,5 @@
 	helper = store
 [core]
     editor = vim
+[alias]
+	logs = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
