@@ -5,6 +5,7 @@
 	branch = false
     diff = false
     status = false
+    stash = false
 [diff]
 	tool = vimdiff
 [difftool]
