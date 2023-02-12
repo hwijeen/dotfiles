@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/hwijeen/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="simple"
 
@@ -49,17 +49,18 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # Personal aliases
-alias typora="open -a typora"
 alias py="python"
 alias mv="mv -i"
 alias cp="cp -i"
 alias jobs="jobs -l"
-alias vim="/usr/local/bin/vim"
 alias ruby="/usr/local/Cellar/ruby/2.7.2/bin/ruby"
 alias gem="/usr/local/Cellar/ruby/2.7.2/bin/gem"
 
 # Personal variables
-export PATH="/usr/local/anaconda3/bin:$PATH"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+fi
 export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1 # Don't write .pyc files
@@ -87,3 +88,9 @@ pf(){
         ssh -f -N -L "$2":localhost:$2 $1
     fi
 }
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
