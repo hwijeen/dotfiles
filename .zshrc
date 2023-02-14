@@ -53,13 +53,10 @@ alias py="python"
 alias mv="mv -i"
 alias cp="cp -i"
 alias jobs="jobs -l"
-alias ruby="/usr/local/Cellar/ruby/2.7.2/bin/ruby"
-alias gem="/usr/local/Cellar/ruby/2.7.2/bin/gem"
 
 # Personal variables
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/anaconda3/bin:$PATH"
-    export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 fi
 export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
 export LSCOLORS=Gxfxcxdxbxegedabagacad
