@@ -20,8 +20,15 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 ``
 
 
+## 2-1. For ubuntu
+```
+wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+chmod +x ./Anaconda3-2022.10-Linux-x86_64.sh
+./Anaconda3-2022.10-Linux-x86_64.sh
+```
 
-## 2. Using Homebrew
+
+## 2-2. Using Homebrew
 
 ``bash
 brew install --cask iterm2
