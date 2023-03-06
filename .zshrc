@@ -47,6 +47,10 @@ plugins=(git docker alias-tips zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
 
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile;
+fi
+
 # User configuration
 # Personal aliases
 alias py="python"
@@ -55,9 +59,6 @@ alias cp="cp -i"
 alias jobs="jobs -l"
 
 # Personal variables
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    export PATH="/opt/homebrew/anaconda3/bin:$PATH"
-fi
 export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export PYTHONDONTWRITEBYTECODE=1 # Don't write .pyc files
@@ -85,9 +86,5 @@ pf(){
         ssh -f -N -L "$2":localhost:$2 $1
     fi
 }
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

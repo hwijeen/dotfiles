@@ -138,7 +138,7 @@ set updatetime=100 " for fast tagbar sync
 "*****************************************************************************
 colorscheme nord
 syntax on
-set ruler
+set noruler
 set rulerformat=%13(%l/%L\ %p%%%)
 set number
 
