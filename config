@@ -1,0 +1,19 @@
+Host lusaka
+    HostName lusaka.sp.cs.cmu.edu
+    User hahn2
+
+Host tunis
+    HostName tunis.sp.cs.cmu.edu
+    User hahn2
+
+Host dakar
+    HostName dakar.sp.cs.cmu.edu
+    User hahn2
+
+Host asmara
+    HostName asmara.sp.cs.cmu.edu
+    User hahn2
+
+Host tir
+    HostName tir.lti.cs.cmu.edu
+    User hahn2
