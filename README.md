@@ -7,33 +7,19 @@
 
 
 ## Symbolic link
+
+```bash
 ln -s dotfiles/.vimrc ~/.
 ln -s dotfiles/.zshrc ~/.
 ln -s dotfiles/.gitconfig ~/.
 ln -s dotfiles/.tmux.conf ~/.
-
-
-## Managers and etc
-
-``bash
-# Homebrew for mac
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-# brew doctor
-
-# Anaconda for ubuntu
-wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
-chmod +x ./Anaconda3-2022.10-Linux-x86_64.sh
-./Anaconda3-2022.10-Linux-x86_64.sh
-
-# fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-``
+ln -s dotfiles/config ~/.ssh/config
+```
 
 
 ## Oh-my-zsh
 
-``bash
+```bash
 # oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 # chsh -s $(which zsh)
@@ -44,64 +30,30 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM1:-$ZSH/custom}/plugins/alias-tips
 # export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
-``
+```
 
 
-## Homebrew
+## Homebrew for MacOS
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew doctor
+brew update
+brew bundle --file=dotfiles/.brewfile
+```
 
-``bash
-brew install --cask iterm2
 
-brew install git
+## Etc for Ubuntu
 
-brew install vim
+```bash
+# Anaconda
+wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+chmod +x ./Anaconda3-2022.10-Linux-x86_64.sh
+./Anaconda3-2022.10-Linux-x86_64.sh
 
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
-
-brew install fzf
-
-brew install tmux
-
-brew install --cask docker
-
-brew install --cask anaconda
-# export PATH="/usr/local/anaconda3/bin:$PATH"
-
-brew install jq
-
-brew install bat
-
-brew install tldr
-
-brew install ctags
-
-brew install --cask openinterminal-lite
-
-brew install --cask keka
-
-brew install --cask sublime-text
-
-brew install --cask vlc
-
-brew install --cask google-chrome
-
-brew install --cask typora
-
-brew install --cask notion
-
-brew install --cask appcleaner
-
-brew install --cask zoom
-
-brew install --cask microsoft-office
-
-brew install --cask obsidian
-
-brew install --cask monitorcontrol
-
-brew install --cask karabiner-elements
-``
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
 
 
 ## Misc
