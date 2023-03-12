@@ -47,6 +47,7 @@ plugins=(git docker alias-tips zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source $ZSH/oh-my-zsh.sh
 
+# Put device specific contents into bash_profile
 if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile;
 fi
@@ -86,5 +87,3 @@ pf(){
         ssh -f -N -L "$2":localhost:$2 $1
     fi
 }
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
