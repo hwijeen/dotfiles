@@ -36,6 +36,7 @@ git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM1:-$ZSH/custom}/plu
 ## Homebrew for MacOS
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)" >> ~/.bash_profile
 brew doctor
 brew update
 brew bundle --file=dotfiles/.brewfile
