@@ -1,20 +1,7 @@
 ## Basics
 
-* [블로그 글](https://subicura.com/2017/11/22/mac-os-development-environment-setup.html) 참고해서 system prefrences 설정
-* App store
-* Dotfiles clone(`git clone https://github.com/hwijeen/dotfiles`)
+* [System preferences](https://subicura.com/2017/11/22/mac-os-development-environment-setup.html)
 * ssh configs, [ssh-copy-id](https://itzone.tistory.com/694)
-
-
-## Symbolic link
-
-```bash
-ln -s dotfiles/.vimrc ~/.
-ln -s dotfiles/.zshrc ~/.
-ln -s dotfiles/.gitconfig ~/.
-ln -s dotfiles/.tmux.conf ~/.
-ln -s dotfiles/config ~/.ssh/config
-```
 
 
 ## Oh-my-zsh
@@ -36,7 +23,7 @@ git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM1:-$ZSH/custom}/plu
 ## Homebrew for MacOS
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-eval "$(/opt/homebrew/bin/brew shellenv)" >> ~/.bash_profile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
 brew doctor
 brew update
 brew bundle --file=dotfiles/.brewfile
