@@ -466,7 +466,7 @@ cnoreabbrev tb TagbarToggle
 let g:tagbar_autofocus = 1
 let g:tagbar_map_nexttag = "<C-j>"
 let g:tagbar_map_prevtag = "<C-k>"
-let g:tagbar_srt = 0
+let g:tagbar_sort = 0
 
 " jedi-vim
 autocmd FileType python setlocal completeopt-=preview " do not open docstring on autocompletion
