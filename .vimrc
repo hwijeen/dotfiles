@@ -33,12 +33,12 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'  "Git
+Plug 'tpope/vim-fugitive'  "Gitdiff
 Plug 'tpope/vim-rhubarb' "Github
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-Plug 'airblade/vim-gitgutter' "Gitdiff
+Plug 'airblade/vim-gitgutter' "Git
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
