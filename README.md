@@ -33,12 +33,12 @@ brew bundle --file=dotfiles/.brewfile
 ## Etc for Ubuntu
 
 ```bash
-# Anaconda
-wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
-chmod +x ./Anaconda3-2022.10-Linux-x86_64.sh
-./Anaconda3-2022.10-Linux-x86_64.sh
+# mamba
+# https://mamba.readthedocs.io/en/latest/installation.html#fresh-install
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+bash Mambaforge-$(uname)-$(uname -m).sh
 
-# fzf
+# fzf  # TODO maybe through mamba or something..
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
