@@ -493,6 +493,7 @@ let g:SuperTabCrMapping = 1
 "vim-conda
 cnoreabbrev conda CondaChangeEnv
 let g:conda_startup_msg_suppress = 1
+let g:conda_startup_wrn_suppress = 1
 
 " Goyo
 cnoreabbrev goyo colorscheme seoul256 <bar> Goyo
