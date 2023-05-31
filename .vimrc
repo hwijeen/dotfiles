@@ -47,7 +47,6 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 " Plug 'sheerun/vim-polyglot'
-Plug 'cjrh/vim-conda'
 Plug 'tpope/vim-surround'  " putting '(. etc around
 Plug 'tpope/vim-repeat'
 Plug 'junegunn/goyo.vim'
@@ -59,6 +58,7 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'xolox/vim-misc' " required by vim-session
 Plug 'xolox/vim-session'
 Plug 'github/copilot.vim'
+Plug 'chrisbra/csv.vim'
 
 call plug#end()
 
@@ -489,11 +489,6 @@ let python_highlight_all = 1
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabCrMapping = 1
-
-"vim-conda
-cnoreabbrev mamba CondaChangeEnv
-let g:conda_startup_msg_suppress = 1
-let g:conda_startup_wrn_suppress = 1
 
 " Goyo
 cnoreabbrev goyo colorscheme seoul256 <bar> Goyo
