@@ -8,6 +8,7 @@ brew "git"
 brew "vim"
 brew "fzf"
 brew "tmux"
+brew "htop"
 
 cask "iterm2"
 cask "font-hack-nerd-font"
