@@ -58,7 +58,7 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'xolox/vim-misc' " required by vim-session
 Plug 'xolox/vim-session'
 Plug 'github/copilot.vim'
-Plug 'chrisbra/csv.vim'
+Plug 'mechatroner/rainbow_csv'
 
 call plug#end()
 
