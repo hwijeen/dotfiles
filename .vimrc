@@ -44,7 +44,6 @@ Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 " Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'  " putting '(. etc around
@@ -59,6 +58,7 @@ Plug 'xolox/vim-misc' " required by vim-session
 Plug 'xolox/vim-session'
 Plug 'github/copilot.vim'
 Plug 'mechatroner/rainbow_csv'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -400,7 +400,6 @@ let g:airline#extensions#tabline#fnamemod = ':~:.' " filename-modifiers
 let g:airline#extensions#tmuxline = 1
 let airline#extensions#tmuxline#color_template = 'normal'
 
-" let g:airline#extensions#syntastic#enabled = 1
 " let g:airline#extensions#branch#enabled = 1
 " let g:airline#extensions#tagbar#enabled = 1
 " let g:airline_skip_empty_sections = 1
@@ -445,21 +444,29 @@ let g:tmuxline_preset = {
     \'z'       : '#H',
     \'options' : {'status-justify' : 'left'}}
 
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=2
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_checkers=['pylint']
-let g:syntastic_html_checkers = ['tidy']
-let g:syntastic_sh_checkers = ['shellcheck']
-let g:syntastic_quiet_messages = {"!level":  "errors"}
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-cnoreabbrev sc w <bar> SyntasticCheck
-cnoreabbrev Sc sc
+" ALE
+let g:ale_linters = {
+    \'python': ['pylint']
+    \}
+let g:ale_fixers = {
+    \'python': ['black','isort']
+    \}
+let g:ale_virtualtext_cursor = 1
+let g:ale_set_highlights = 1
+let g:ale_exclude_highlights = ['Line too long', 'datasets', 'line too long']
+let g:ale_echo_cursor = 1
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
+let g:ale_set_signs = 0
+let g:ale_sign_error='x'
+let g:ale_sign_warning='!'
+" highlight ALEErrorSign ctermbg=NONE ctermfg=red
+" highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+" let g:ale_python_flake8_options = '--max-line-length=79'
+" let g:ale_python_pylint_options = '--max-line-length=79 --ignore-long-lines'
+let g:ale_python_pylint_options = '--max-attributes=100 --disable=missing-class-docstring,missing-function-docstring,missing-module-docstring,too-many-arguments'
+let g:ale_python_black_options = '--line-length 79'
+highlight ALEError ctermbg=NONE ctermfg=red cterm=undercurl
+highlight ALEWarning ctermbg=NONE ctermfg=yellow cterm=underline
 
 " Tagbar
 cnoreabbrev tb TagbarToggle
