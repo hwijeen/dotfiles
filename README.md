@@ -50,5 +50,15 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 * Goodnotes
 * Toggl
 * Spark
-* magnet
+* Magnet
 * Amphetamine
+* Grammarly for Safari
+
+
+## Notes
+Apptivate
+* option+a: Chrome
+* option+s: Notion
+* option+p: iTerm2
+* option+[: Safari
+* option+]: Slack
