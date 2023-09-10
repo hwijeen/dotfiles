@@ -54,8 +54,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'xolox/vim-misc' " required by vim-session
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-misc' " required by vim-session
+" Plug 'xolox/vim-session'
 Plug 'github/copilot.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
@@ -112,11 +112,11 @@ endif
 
 set splitright
 
-" session management
-let g:session_directory = "~/.vim/session"
-let g:session_autoload = "no"
-let g:session_autosave = "no"
-let g:session_command_aliases = 1
+" " session management
+" let g:session_directory = "~/.vim/session"
+" let g:session_autoload = "no"
+" let g:session_autosave = "no"
+" let g:session_command_aliases = 1
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
@@ -446,7 +446,7 @@ let g:tmuxline_preset = {
 
 " ALE
 let g:ale_linters = {
-    \'python': ['pylint']
+    \'python': ['pylint', 'pylsp']
     \}
 let g:ale_fixers = {
     \'python': ['black','isort']
@@ -467,6 +467,10 @@ let g:ale_python_pylint_options = '--max-attributes=100 --disable=missing-class-
 let g:ale_python_black_options = '--line-length 79'
 highlight ALEError ctermbg=NONE ctermfg=red cterm=undercurl
 highlight ALEWarning ctermbg=NONE ctermfg=yellow cterm=underline
+" let g:ale_completion_enabled = 1
+let g:ale_python_pylsp_executable = 'pyls'
+" nnoremap <leader>d :ALEGoToDefinition<CR>
+" nnoremap <leader>n :ALEFindReferences<CR>
 
 " Tagbar
 cnoreabbrev tb TagbarToggle
