@@ -53,6 +53,9 @@ if [ -f ~/.bash_profile ]; then
 fi
 
 # User configuration
+# Vim binding in shell
+set -o vi
+
 # Personal aliases
 alias py="python"
 alias mv="mv -i"
