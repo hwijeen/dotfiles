@@ -338,6 +338,9 @@ augroup END
 " shell
 autocmd FileType sh nmap <F10> :w <bar> :!./%<CR>
 
+" c/c++
+autocmd FileType c,cpp setlocal shiftwidth=2 tabstop=2
+
 "*****************************************************************************
 "" Plugins
 "*****************************************************************************
@@ -401,10 +404,9 @@ let g:airline#extensions#tmuxline = 1
 let airline#extensions#tmuxline#color_template = 'normal'
 
 " let g:airline#extensions#branch#enabled = 1
-" let g:airline#extensions#tagbar#enabled = 1
 " let g:airline_skip_empty_sections = 1
 " let g:airline#extensions#virtualenv#enabled = 1
-" let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
 " let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 " if !exists('g:airline_powerline_fonts')
 "   " let g:airline#extensions#tabline#left_sep = ' '
@@ -435,6 +437,13 @@ let airline#extensions#tmuxline#color_template = 'normal'
 "   let g:airline_symbols.readonly = ''
 "   let g:airline_symbols.linenr = ''
 " endif
+" https://github.com/vim-airline/vim-airline/issues/1845
+let g:airline_section_a = '' " turn off vim mode display
+let g:airline_section_c = '' " turn off file name, it's available in the tabline
+let g:airline_section_x = '%#__accent_bold#%#__restore__#%{airline#util#prepend("",0)}%{airline#util#prepend(airline#extensions#tagbar#currenttag(),0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{airline#util#prepend("", 0)}%{airline#util#prepend("",0)}' " took out filetype
+" let g:airline_section_x = '"%#__accent_bold#%#__restore__#%{airline#util#prepend("",0)}%{airline#util#prepend(airline#extensions#tagbar#currenttag(),0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{airline#util#prepend("", 0)}%{airline#util#prepend("",0)}%{airline#util#wrap(airline#parts#filetype(),0)}' " this is the default
+let g:airline_section_y = '' " turn off encoding (e.g. unix)
+let g:airline_section_z = '' " turn off current position
 
 let g:tmuxline_preset = {
     \'a'       : '#S',
@@ -517,7 +526,7 @@ cnoreabbrev jq %!jq .
 nnoremap <leader>c :ccl<CR> <bar> :lcl<CR>
 
 " hack to turn off airline status bar
-autocmd VimEnter * set laststatus=0
+" autocmd VimEnter * set laststatus=0
 
 " automatically open fold
 let g:tagbar_autoshowtag=1
