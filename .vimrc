@@ -360,6 +360,9 @@ autocmd VimEnter * call NERDTreeAddKeyMap({
         \ 'callback': 'NERDTreeCopyPath',
         \ 'quickhelpText': 'put full path of current node into the default register' })
 
+" tagbar
+let g:tagbar_autoshowtag=1 " automatically open fold
+
 "" vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :G commit<CR>
@@ -528,5 +531,4 @@ nnoremap <leader>c :ccl<CR> <bar> :lcl<CR>
 " hack to turn off airline status bar
 " autocmd VimEnter * set laststatus=0
 
-" automatically open fold
-let g:tagbar_autoshowtag=1
+cnoreabbrev copy NERDTreeClose <bar> GitGutterDisable <bar> IndentLinesDisable <bar> set nonu
