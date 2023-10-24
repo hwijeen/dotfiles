@@ -532,3 +532,4 @@ nnoremap <leader>c :ccl<CR> <bar> :lcl<CR>
 " autocmd VimEnter * set laststatus=0
 
 cnoreabbrev copy NERDTreeClose <bar> GitGutterDisable <bar> IndentLinesDisable <bar> set nonu
+cnoreabbrev nocopy GitGutterEnable <bar> IndentLinesEnable <bar> set nu
