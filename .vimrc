@@ -353,6 +353,7 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 40
 let g:NERDTreeNodeDelimiter = "\u00a0"
+let g:NERDTreeStatusline='' " default: %{exists('b:NERDTree')?b:NERDTree.root.path.str():''}
 cnoreabbrev nt NERDTreeToggle
 cnoreabbrev ntf NERDTreeFind
 autocmd VimEnter * call NERDTreeAddKeyMap({
@@ -410,7 +411,7 @@ let airline#extensions#tmuxline#color_template = 'normal'
 " let g:airline_skip_empty_sections = 1
 " let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
-" let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
+let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 " if !exists('g:airline_powerline_fonts')
 "   " let g:airline#extensions#tabline#left_sep = ' '
 "   " let g:airline#extensions#tabline#left_alt_sep = '|'
