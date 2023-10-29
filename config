@@ -1,5 +1,13 @@
 Host lusaka
-    HostName lusaka.sp.cs.cmu.edu
+    HostName 128.2.7.6
+    User hwijeen
+
+Host asmara
+    HostName asmara.sp.cs.cmu.edu
+    User hahn2
+
+Host tir
+    HostName tir.lti.cs.cmu.edu
     User hahn2
 
 Host tunis
@@ -10,10 +18,10 @@ Host dakar
     HostName dakar.sp.cs.cmu.edu
     User hahn2
 
-Host asmara
-    HostName asmara.sp.cs.cmu.edu
+Host nairobi
+    HostName nairobi.sp.cs.cmu.edu
     User hahn2
 
-Host tir
-    HostName tir.lti.cs.cmu.edu
+Host windhoek
+    HostName windhoek.sp.cs.cmu.edu
     User hahn2
