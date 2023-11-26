@@ -6,8 +6,8 @@ Host asmara
     HostName asmara.sp.cs.cmu.edu
     User hahn2
 
-Host tir
-    HostName tir.lti.cs.cmu.edu
+Host babel
+    HostName babel.lti.cs.cmu.edu
     User hahn2
 
 Host tunis
