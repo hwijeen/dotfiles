@@ -43,6 +43,8 @@ Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
+" Plug 'jiangmiao/auto-pairs'  " delimitMate alternative
+Plug 'Vimjas/vim-python-pep8-indent'  " fixes indent for inside parenthesis and closing bracket
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
 " Plug 'sheerun/vim-polyglot'
