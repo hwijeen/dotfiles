@@ -372,12 +372,12 @@ noremap <Leader>gc :G commit<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
 " noremap <Leader>gst :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gb :Git blame<CR>
 noremap <Leader>gd :Gvdiffsplit!<CR>
 noremap <Leader>gr :Gremove<CR>
 nnoremap gdh :diffget //2<CR>
 nnoremap gdl :diffget //3<CR>
-nnoremap <Leader>o :.Gbrowse<CR>
+nnoremap <Leader>go :GBrowse<CR>
 
 " vim-session
 cnoreabbrev so OpenSession<Space>
