@@ -377,7 +377,7 @@ noremap <Leader>gd :Gvdiffsplit!<CR>
 noremap <Leader>gr :Gremove<CR>
 nnoremap gdh :diffget //2<CR>
 nnoremap gdl :diffget //3<CR>
-nnoremap <Leader>o :.Gbrowse<CR>
+nnoremap <Leader>go :GBrowse<CR>
 
 " vim-session
 cnoreabbrev so OpenSession<Space>
