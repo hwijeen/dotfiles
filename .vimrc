@@ -372,7 +372,7 @@ noremap <Leader>gc :G commit<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
 " noremap <Leader>gst :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gb :Git blame<CR>
 noremap <Leader>gd :Gvdiffsplit!<CR>
 noremap <Leader>gr :Gremove<CR>
 nnoremap gdh :diffget //2<CR>
@@ -461,10 +461,10 @@ let g:tmuxline_preset = {
 
 " ALE
 let g:ale_linters = {
-    \'python': ['pylint', 'pylsp']
+    \'python': ['ruff']
     \}
 let g:ale_fixers = {
-    \'python': ['black','isort']
+    \'python': ['black', 'isort', 'ruff']
     \}
 let g:ale_virtualtext_cursor = 1
 let g:ale_set_highlights = 1
