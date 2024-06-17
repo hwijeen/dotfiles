@@ -84,11 +84,15 @@ pf(){
     if [[ "$#" -eq 3 ]];then
         if [[ "$1" == "babel" ]];then
             # pf babel babel-2-12 9999
-            echo "ssh -f -N -L "$3":localhost:"$3" -J babel hahn2@"$2""
+            echo "ssh -f -N -L $3:localhost:$3 -J babel hahn2@$2"
             ssh -f -N -J babel hahn2@"$2" -L "$3":localhost:"$3"
+        elif [[ "$1" == "dojo" ]]; then
+            # pf dojo 12 9999
+            echo "ssh -f -N -L $3:localhost:$3 -J hwijeen@$1 hwijeen@dojo-a3-ghpc-$2"
+            ssh -f -N -L "$3":localhost:"$3" -J hwijeen@"$1" hwijeen@dojo-a3-ghpc-"$2"
         else
             # pf 230 nipa 9999
-            echo "ssh -f -N -L "$3":localhost:$3 -J $1 $2"
+            echo "ssh -f -N -L $3:localhost:$3 -J $1 $2"
             ssh -f -N -L "$3":localhost:$3 -J $1 $2
         fi
     else
