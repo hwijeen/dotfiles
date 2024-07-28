@@ -223,7 +223,7 @@ if !exists('*s:setupWrapping')
     set wrap
     set linebreak
     " set wm=2
-    " set textwidth=79
+    " set textwidth=99
     set textwidth=0
     set wrapmargin=0
 
@@ -330,7 +330,7 @@ vnoremap K :m '<-2<CR>gv=gv
 " vim-python
 augroup vimrc-python
   autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=99
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
   autocmd FileType python nmap <F10> :w <bar> :!python %<CR>
@@ -476,10 +476,10 @@ let g:ale_sign_error='x'
 let g:ale_sign_warning='!'
 " highlight ALEErrorSign ctermbg=NONE ctermfg=red
 " highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-" let g:ale_python_flake8_options = '--max-line-length=79'
-" let g:ale_python_pylint_options = '--max-line-length=79 --ignore-long-lines'
+" let g:ale_python_flake8_options = '--max-line-length=99'
+" let g:ale_python_pylint_options = '--max-line-length=99 --ignore-long-lines'
 let g:ale_python_pylint_options = '--max-attributes=100 --disable=missing-class-docstring,missing-function-docstring,missing-module-docstring,too-many-arguments'
-let g:ale_python_black_options = '--line-length 79'
+let g:ale_python_black_options = '--line-length 99'
 highlight ALEError ctermbg=NONE ctermfg=red cterm=undercurl
 highlight ALEWarning ctermbg=NONE ctermfg=yellow cterm=underline
 " let g:ale_completion_enabled = 1
