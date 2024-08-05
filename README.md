@@ -53,6 +53,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 * Magnet
 * Amphetamine
 * Grammarly for Safari
+* [Shell-AI](https://github.com/ibigio/shell-ai)
 
 
 ## Notes
