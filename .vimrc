@@ -56,8 +56,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-" Plug 'xolox/vim-misc' " required by vim-session
-" Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc' " required by vim-session
+Plug 'xolox/vim-session'
 Plug 'github/copilot.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
@@ -113,12 +113,6 @@ else
 endif
 
 set splitright
-
-" " session management
-" let g:session_directory = "~/.vim/session"
-" let g:session_autoload = "no"
-" let g:session_autosave = "no"
-" let g:session_command_aliases = 1
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
@@ -278,6 +272,9 @@ nnoremap <silent> <S-t> :tabnew<CR>
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
+"" Show current file path
+nnoremap <leader>p :echo expand('%:p')<CR>
+
 "" Opens an edit command with the path of the currently edited file filled in
 noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
@@ -357,7 +354,8 @@ let g:NERDTreeWinSize = 40
 let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeStatusline='' " default: %{exists('b:NERDTree')?b:NERDTree.root.path.str():''}
 cnoreabbrev nt NERDTreeToggle
-cnoreabbrev ntf NERDTreeFind
+cnoreabbrev ntff NERDTreeFind
+cnoreabbrev ntf NERDTreeFocus
 autocmd VimEnter * call NERDTreeAddKeyMap({
         \ 'key': 'yy',
         \ 'callback': 'NERDTreeCopyPath',
@@ -371,7 +369,7 @@ noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :G commit<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
-" noremap <Leader>gst :Gstatus<CR>
+noremap <Leader>gst :Git status<CR>
 noremap <Leader>gb :Git blame<CR>
 noremap <Leader>gd :Gvdiffsplit!<CR>
 noremap <Leader>gr :Gremove<CR>
@@ -385,6 +383,8 @@ cnoreabbrev ss SaveSession<Space>
 cnoreabbrev sd DeleteSession
 cnoreabbrev sc CloseSession<CR>
 cnoreabbrev sv ViewSession<CR>
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
 
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
