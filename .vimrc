@@ -456,7 +456,7 @@ let g:tmuxline_preset = {
     \'win'     : ['#I', '#W'],
     \'cwin'    : ['#I', '#W #F'],
     \'y'       : '%Y-%m-%d %R',
-    \'z'       : '#H',
+    \'z'       : '#(bash ~/dotfiles/tmux_hostname/hostname.sh)',
     \'options' : {'status-justify' : 'left'}}
 
 " ALE
