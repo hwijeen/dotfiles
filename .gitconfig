@@ -10,7 +10,7 @@
 	branch = false
     diff = false
     status = false
-    stash = false
+	stash = cat
 [diff]
 	tool = vimdiff
 [difftool]
