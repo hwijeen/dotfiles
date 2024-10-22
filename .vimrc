@@ -39,7 +39,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter' "Git
-Plug 'vim-scripts/grep.vim'
+" Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
@@ -366,6 +366,10 @@ autocmd VimEnter * call NERDTreeAddKeyMap({
 " tagbar
 let g:tagbar_autoshowtag=1 " automatically open fold
 
+" fzf vim
+nnoremap <C-p> :Files<CR>
+nnoremap <leader>f :Rg<CR>
+
 "" vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :G commit<CR>
@@ -388,11 +392,11 @@ cnoreabbrev sv ViewSession<CR>
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
 
-" grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
-let Grep_Default_Options = '-IR'
-let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules'
+" " grep.vim
+" nnoremap <silent> <leader>f :Rgrep<CR>
+" let Grep_Default_Options = '-IR'
+" let Grep_Skip_Files = '*.log *.db'
+" let Grep_Skip_Dirs = '.git node_modules'
 
 " vim-airline
 " if !exists('g:airline_symbols')
