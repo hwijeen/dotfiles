@@ -61,6 +61,8 @@ Plug 'xolox/vim-session'
 Plug 'github/copilot.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
