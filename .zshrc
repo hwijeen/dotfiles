@@ -66,6 +66,7 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias jobs="jobs -l"
 alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
+alias rp="realpath"
 
 # Personal variables
 export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
