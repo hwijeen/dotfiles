@@ -63,6 +63,7 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ojroques/vim-oscyank'
 
 call plug#end()
 
@@ -522,15 +523,6 @@ let python_highlight_all = 1
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabCrMapping = 1
 
-" Goyo
-cnoreabbrev goyo colorscheme seoul256 <bar> Goyo
-
-" Seoul256
-cnoreabbrev seoul256 colorscheme seoul256 <bar> AirlineTheme minimalist
-
-" Nord
-cnoreabbrev nord colorscheme nord <bar> AirlineTheme nord
-
 "requires jq install
 cnoreabbrev jq %!jq .
 
@@ -542,3 +534,7 @@ nnoremap <leader>c :ccl<CR> <bar> :lcl<CR>
 
 cnoreabbrev copy only <bar> GitGutterDisable <bar> IndentLinesDisable <bar> set nonu
 cnoreabbrev nocopy GitGutterEnable <bar> IndentLinesEnable <bar> set nu
+
+" yy in any mode uses OSCYank
+" https://github.com/ojroques/vim-oscyank/issues/19#issuecomment-913422361
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif
