@@ -47,11 +47,8 @@ Plug 'Raimondi/delimitMate'
 Plug 'Vimjas/vim-python-pep8-indent'  " fixes indent for inside parenthesis and closing bracket
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
-" Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'  " putting '(. etc around
 Plug 'tpope/vim-repeat'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
