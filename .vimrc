@@ -466,12 +466,15 @@ let g:tmuxline_preset = {
 
 " ALE
 let g:ale_linters = {
-    \'python': ['ruff']
-    \}
+\    'python': ['ruff'],
+\    'sh': ['shellcheck'],
+\}
 let g:ale_fixers = {
-    \'python': ['ruff', 'trim_whitespace', 'remove_trailing_lines']
-    \}
+\    'python': ['ruff', 'trim_whitespace', 'remove_trailing_lines'],
+\    'sh': ['shfmt'],
+\ }
 let g:ale_python_ruff_options = 'check --select ALL --line-length 99'
+let g:ale_sh_shfmt_options = '-i 2 -ci -w 80'
 " let g:ale_history_log_output = 1
 let g:ale_set_highlights = 1
 let g:ale_echo_cursor = 1
