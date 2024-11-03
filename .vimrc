@@ -370,6 +370,7 @@ let g:tagbar_autoshowtag=1 " automatically open fold
 " fzf vim
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>f :Rg<CR>
+nnoremap <leader>m :Marks<CR>
 
 "" vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
