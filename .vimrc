@@ -471,11 +471,11 @@ let g:ale_linters = {
     \'python': ['ruff']
     \}
 let g:ale_fixers = {
-    \'python': ['black', 'isort', 'ruff']
+    \'python': ['ruff', 'trim_whitespace', 'remove_trailing_lines']
     \}
-let g:ale_virtualtext_cursor = 1
+let g:ale_python_ruff_options = 'check --select ALL --line-length 99'
+" let g:ale_history_log_output = 1
 let g:ale_set_highlights = 1
-let g:ale_exclude_highlights = ['Line too long', 'datasets', 'line too long']
 let g:ale_echo_cursor = 1
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
 let g:ale_set_signs = 0
@@ -483,14 +483,9 @@ let g:ale_sign_error='x'
 let g:ale_sign_warning='!'
 " highlight ALEErrorSign ctermbg=NONE ctermfg=red
 " highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-" let g:ale_python_flake8_options = '--max-line-length=99'
-" let g:ale_python_pylint_options = '--max-line-length=99 --ignore-long-lines'
-let g:ale_python_pylint_options = '--max-attributes=100 --disable=missing-class-docstring,missing-function-docstring,missing-module-docstring,too-many-arguments'
-let g:ale_python_black_options = '--line-length 99'
 highlight ALEError ctermbg=NONE ctermfg=red cterm=undercurl
 highlight ALEWarning ctermbg=NONE ctermfg=yellow cterm=underline
 " let g:ale_completion_enabled = 1
-let g:ale_python_pylsp_executable = 'pyls'
 " nnoremap <leader>d :ALEGoToDefinition<CR>
 " nnoremap <leader>n :ALEFindReferences<CR>
 
