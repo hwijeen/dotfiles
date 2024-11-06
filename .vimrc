@@ -470,11 +470,12 @@ let g:ale_linters = {
 \    'sh': ['shellcheck'],
 \}
 let g:ale_fixers = {
-\    'python': ['ruff', 'trim_whitespace', 'remove_trailing_lines'],
+\    'python': ['ruff', 'ruff_format', 'trim_whitespace', 'remove_trailing_lines'],
 \    'sh': ['shfmt', 'trim_whitespace', 'remove_trailing_lines'],
 \    'markdown': ['pandoc', 'prettier', 'trim_whitespace', 'remove_trailing_lines'],
 \ }
 let g:ale_python_ruff_options = 'check --select ALL --line-length 99 --target-version py310'
+let g:ale_python_ruff_format_options = '--line-length 99'
 let g:ale_sh_shfmt_options = '-i 2 -ci -w 80'
 " let g:ale_history_log_output = 1
 let g:ale_set_highlights = 1
