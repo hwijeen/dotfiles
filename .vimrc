@@ -330,8 +330,8 @@ augroup vimrc-python
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=99
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-  autocmd FileType python nmap <F10> :w <bar> :!python %<CR>
-  autocmd FileType python nmap <F9> oimport ipdb; ipdb.set_trace(context=10)<ESC>
+  autocmd FileType python nmap <F2> :w <bar> :!python %<CR>
+  autocmd FileType python nmap <F1> oimport ipdb; ipdb.set_trace(context=10)<ESC>
 augroup END
 
 " shell
