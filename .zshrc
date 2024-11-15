@@ -107,15 +107,10 @@ pf(){
     fi
 }
 
-# https://chemicloud.com/blog/download-google-drive-files-using-wget/
-gdrive_download(){
-    echo "gdrive_download FILEID FILENAME"
-    echo "e.g. gdrive_download 1uBtlaggVyWshwcyP6kEI-y_W3P8D26sz foo.tar.gz"
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=$1 ' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=$1" -O $2 && rm -rf /tmp/cookies.txt
+stail() {
+    tail -f $(scontrol show job $1 | grep -oP "StdOut=\K.*")
 }
 
-drive_download_small(){
-    echo "drive_download_small FILEID FILENAME"
-    echo "e.g. drive_download_small 1uBtlaggVyWshwcyP6kEI-y_W3P8D26sz foo.tar.gz"
-    wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=FILEID' -O FILENAME
+stail_err() {
+    tail -f $(scontrol show job $1 | grep -oP "StdErr=\K.*")
 }
