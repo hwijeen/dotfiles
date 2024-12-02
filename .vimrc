@@ -538,3 +538,6 @@ cnoreabbrev nocopy GitGutterEnable <bar> IndentLinesEnable <bar> set nu
 " yy in any mode uses OSCYank
 " https://github.com/ojroques/vim-oscyank/issues/19#issuecomment-913422361
 autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif
+
+" so that highlight is not overriden by airline. something sets ctermfg to 0
+highlight Visual ctermfg=None ctermbg=0
