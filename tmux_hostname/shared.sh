@@ -57,6 +57,11 @@ get_ssh_user() {
 get_remote_info() {
   local command=$1
 
+  # Debug to a specific file in your home directory
+  # exec 1>>~/tmux_debug.log 2>&1
+
+  # echo "===== $(date) ====="
+
   # First get the current pane command pid to get the full command with arguments
   local cmd=$({ pgrep -flaP `tmux display-message -p "#{pane_pid}"` ; ps -o command -p `tmux display-message -p "#{pane_pid}"` ; } | xargs -I{} echo {} | grep ssh | sed -E 's/^[0-9]*[[:blank:]]*ssh //')
 
@@ -86,9 +91,46 @@ get_remote_info() {
   esac
 }
 
+
+get_joined_info() {
+  local command=$1
+
+  # exec 1>>~/tmux_debug.log 2>&1
+
+  # echo "===== $(date) ====="
+  local pane_pid=$(tmux display-message -p "#{pane_pid}")
+  # echo "Pane PID: $pane_pid"
+
+  # echo "Process tree:"
+  # ps -ef | grep $pane_pid
+
+  # Look for srun in child processes of pane_pid
+  local cmd=$(ps -ef | awk -v ppid=$pane_pid '$3 == ppid && /srun.*jobid/' | grep -v grep)
+  # echo "Found srun command: $cmd"
+
+  local jobid=$(echo "$cmd" | grep -o '\--jobid [0-9]*' | awk '{print $2}')
+  # echo "Extracted jobid: $jobid"
+
+  local node_info=$(squeue -j "$jobid" --noheader | awk '{print $8}')
+  # echo "Node info: $node_info"
+  case "$command" in
+    "hostname")
+      echo "$node_info"
+      ;;
+    "whoami")
+      echo $(whoami)
+      ;;
+    *)
+      echo "$(whoami)@$node_info"
+      ;;
+    esac
+}
+
 get_info() {
   # If command is ssh do some magic
-  if ssh_connected; then
+  if join_connected; then
+     echo $(get_joined_info $1)
+  elif ssh_connected; then
     echo $(get_remote_info $1)
   else
     echo $($1)
@@ -99,5 +141,12 @@ ssh_connected() {
   # Get current pane command
   local cmd=$(tmux display-message -p "#{pane_current_command}")
 
-  [ $cmd = "ssh" ] || [ $cmd = "sshpass" ]
+  [ $cmd = "ssh" ] || [ $cmd = "sshpass" ] || [ $cmd == "srun" ]
+}
+
+join_connected() {
+  # Get current pane command
+  local cmd=$(tmux display-message -p "#{pane_current_command}")
+
+  [ $cmd = "srun" ]
 }
