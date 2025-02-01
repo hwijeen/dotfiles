@@ -1,0 +1,167 @@
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+export SHELL=`which zsh`
+
+# Start zsh if it's not already running
+if [ -z "$ZSH_VERSION" ]; then
+    # Assign the Zsh version number to ZSH_VERSION
+    ZSH_VERSION=$(zsh --version | awk '{print $2}')
+    exec "$SHELL" -l
+fi
+
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH so it includes what's installed with conda
+PATH="$PATH:/env/lib/conda/ctx-shared/bin"
+
+# To include personally installed programs like node
+# prioritize what's installed in the conda env
+PATH="/env/lib/conda/hwijeen/bin:$PATH"
+PATH="/env/lib/conda/hwijeen_base/bin:$PATH"
+
+
+# we need to manually load functions if installing zsh from source
+ZSH_FUNC_DIR=$HOME/share/zsh/$ZSH_VERSION/functions
+
+if [[ -d $ZSH_FUNC_DIR && ${fpath[(r)$ZSH_FUNC_DIR]} != $ZSH_FUNC_DIR ]]; then
+  fpath+=($ZSH_FUNC_DIR)
+  export fpath
+fi
+
+# Since zsh related files are 777 I need this
+ZSH_DISABLE_COMPFIX="true"
+
+# taken from .bashrc from stas
+LC_ALL=C.UTF-8
+
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# prevent ls from quoting its listings
+export QUOTING_STYLE=literal
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+umask 000
+
+
+# tell conda not to use ~/.local/lib if it can't install into the currently activate env (e.g. read-only)
+export PYTHONNOUSERSITE=1
+
+
+alias catgs="/env/lib/conda/hwijeen/bin/catgs"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/conda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/conda/etc/profile.d/conda.sh" ]; then
+        . "/opt/conda/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/conda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# without this start-ctx-user can't user `module`
+module ()
+{
+    eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
+}
+
+if [ -f "/env/bin/start-ctx-user" ]; then
+    source /env/bin/start-ctx-user
+    conda activate hwijeen-sunrise_ext
+fi
+
+alias vim=/env/lib/conda/hwijeen/bin/vim
+alias gogo=/env/lib/repos/hwijeen
+alias core=/env/lib/repos/hwijeen/core
+alias sq="squeue";
+alias squ="squeue -o '%8i %20j %4t %10M %8u %15P %10m %15b %3C %.13l %.20S %R' -u hwijeen";
+alias squu="squeue -o '%8i %270j %4t %10M %8u %15P %10m %15b %3C %.13l %.20S %R' -u hwijeen";
+# alias wsqu="watch -n 0.1 squeue -u hwijeen";
+alias wsqu='watch -n 0.1 "squeue -u $(whoami) -o \"%16i %9P %80j %.8T %.10M %.8l %.6D %.20S %R\""'
+alias gpu="python /home/hwijeen/gpu.py"
+alias pip="uv pip"
+alias gpustat="/env/lib/conda/hwijeen/bin/gpustat"
+
+function sint {
+    # if one argument is given
+    if [ $# -eq 1 ]; then
+        num_gpu=${1:-"1"}
+        echo "srun --partition=a3mixedlow --gres=gpu:${num_gpu} --time=2-00:00:00 --pty zsh"
+        unset $(printenv | grep SLURM | sed -E 's/(.*)=.*/\1/' | xargs); srun --partition=a3mixedlow --gres=gpu:${num_gpu} --time=1-00:00:00 --pty zsh
+    elif [ $# -eq 2 ]; then
+        num_gpu=${1:-"1"}
+        node_num=${2:-"24"} # arbitrary
+        echo "salloc --partition=a3dev --nodes=1 --gres=gpu:1 --time=2-00:00:00 --nodelist=dojo-a3-ghpc-${node_num}; ssh dojo-a3-ghpc-${node_num}"
+        salloc --partition=a3dev --nodes=1 --gres=gpu:1 --time=2-00:00:00 --nodelist=dojo-a3-ghpc-${node_num}; ssh dojo-a3-ghpc-${node_num}
+    else
+        num_gpu=${1:-"1"}
+        node_num=${2:-"24"} # arbitrary
+        partition=${3:-"a3mixedlow"}
+        unset $(printenv | grep SLURM | sed -E 's/(.*)=.*/\1/' | xargs); srun --partition=${partition} --gres=gpu:${num_gpu} --time=1-00:00:00 --pty zsh
+    fi
+}
+
+ip() {
+    local hostname=$1
+    local cmd="ssh $hostname hostname -I 2>/dev/null | awk '{print \$1}'"
+    echo "$cmd"
+    eval "$cmd"
+}
+
+# alias 1gpu='srun --overlap --pty --jobid $(salloc --no-shell --partition=g2dev --nodes=1 --ntasks-per-node=1 --cpus-per-task=5  --gres=gpu:1 --time=24:00:00 |& head -1 | tr -dc "0-9") zsh'
+# alias 1gpu='salloc --no-shell --partition=a3low --nodes=1 --ntasks-per-node=1 --cpus-per-task=32  --gres=gpu:1 --time=24:00:00 zsh --job-name hjdev_1gpu'
+gpu_node() {
+    num_gpu=${1:-"1"}
+    partition=${2:-"a3low"}
+    job_name=${3:-"hjdev_gpu"}
+    echo "salloc --job-name=${job_name} --no-shell --partition=${partition} --nodes=1 --ntasks-per-node=1 --cpus-per-task=32  --gres=gpu:${num_gpu} --time=24:00:00 zsh"
+    salloc --job-name="$job_name" --no-shell --partition="$partition" --nodes=1 --ntasks-per-node=1 --cpus-per-task=64  --gres=gpu:"$num_gpu" --time=24:00:00 zsh
+}
+alias dev_cpu='salloc --nodes=1 --ntasks-per-node=1 --cpus-per-task=8 --mem=128G --time=0 --partition=cpuhigh --job-name hjdev_cpu'
+
+function join {
+    job_id=${1}
+    echo "srun --overlap --pty --jobid ${job_id} zsh"
+    srun --overlap --pty --jobid ${job_id} zsh
+}
+
+# https://contextual-ai.slack.com/archives/C06KZ2KQRB2/p1728424116227019
+[[ -f ~/.code-tunnel-env.bash && $SHLVL == 1 ]] && source ~/.code-tunnel-env.bash
