@@ -67,6 +67,7 @@ alias cp="cp -i"
 alias jobs="jobs -l"
 alias ipython="ipython --TerminalInteractiveShell.editing_mode=vi"
 alias rp="realpath"
+alias gstl="git --no-pager stash list"
 
 # Personal variables
 export RPROMPT="%(1j.✦.) %D{%K:%M} " # background job indicator
@@ -113,4 +114,12 @@ stail() {
 
 stail_err() {
     tail -f $(scontrol show job $1 | grep -oP "StdErr=\K.*")
+}
+
+svim() {
+    vim $(scontrol show job $1 | grep -oP "StdOut=\K.*")
+}
+
+svim_err() {
+    vim $(scontrol show job $1 | grep -oP "StdErr=\K.*")
 }
