@@ -337,7 +337,8 @@ augroup vimrc-python
 augroup END
 
 " shell
-autocmd FileType sh nmap <F10> :w <bar> :!./%<CR>
+autocmd FileType sh nmap <F2> :w <bar> :!bash ./%<CR>
+autocmd FileType sh nmap <F10> :w <bar> :!bash ./%<CR>
 
 " c/c++
 autocmd FileType c,cpp setlocal shiftwidth=2 tabstop=2
@@ -475,7 +476,10 @@ let g:ale_fixers = {
 \    'python': ['ruff', 'ruff_format', 'trim_whitespace', 'remove_trailing_lines'],
 \    'sh': ['shfmt', 'trim_whitespace', 'remove_trailing_lines'],
 \    'markdown': ['pandoc', 'prettier', 'trim_whitespace', 'remove_trailing_lines'],
-\ }
+\}
+let g:ale_linters_ignore = {
+\    'sh': ['SC3054'],
+\}
 let g:ale_python_ruff_options = 'check --select ALL --line-length 99 --target-version py310'
 let g:ale_python_ruff_format_options = '--line-length 99'
 let g:ale_sh_shfmt_options = '-i 2 -ci -w 80'
