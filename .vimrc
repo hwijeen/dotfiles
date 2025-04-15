@@ -375,7 +375,7 @@ nnoremap <leader>m :Marks<CR>
 "" vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :G commit<CR>
-noremap <Leader>gsh :Gpush<CR>
+noremap <Leader>gp :Git push<CR>
 noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gst :Git status<CR>
 noremap <Leader>gb :Git blame<CR>
