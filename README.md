@@ -42,24 +42,3 @@ bash Mambaforge-$(uname)-$(uname -m).sh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
-
-
-## Misc
-
-* 한컴오피스
-* Goodnotes
-* Toggl
-* Spark
-* Magnet
-* Amphetamine
-* Grammarly for Safari
-* [Shell-AI](https://github.com/ibigio/shell-ai)
-
-
-## Notes
-Apptivate
-* option+a: Chrome
-* option+s: Notion
-* option+p: iTerm2
-* option+[: Safari
-* option+]: Slack

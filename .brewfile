@@ -1,5 +1,3 @@
-tap "homebrew/cask-fonts"
-
 brew "jq"
 brew "bat"
 brew "tldr"
@@ -12,21 +10,14 @@ brew "htop"
 
 cask "iterm2"
 cask "font-hack-nerd-font"
-cask "docker"
+/* cask "docker" */
 /* cask "anaconda" */
-cask "mambaforge"
+/* cask "mambaforge" */
 cask "openinterminal-lite"
-cask "keka"
+/* cask "keka" */
 cask "sublime-text"
-cask "vlc"
-cask "google-chrome"
-cask "typora"
-cask "notion"
+/* cask "vlc" */
+/* cask "google-chrome" */
 cask "appcleaner"
-cask "zoom"
-cask "microsoft-office"
-cask "obsidian"
 cask "monitorcontrol"
 cask "karabiner-elements"
-cask "apptivate"
-cask "grammarly"
