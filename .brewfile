@@ -10,14 +10,14 @@ brew "htop"
 
 cask "iterm2"
 cask "font-hack-nerd-font"
-/* cask "docker" */
-/* cask "anaconda" */
-/* cask "mambaforge" */
+# cask "docker"
+# cask "anaconda"
+# cask "mambaforge"
 cask "openinterminal-lite"
-/* cask "keka" */
+# cask "keka"
 cask "sublime-text"
-/* cask "vlc" */
-/* cask "google-chrome" */
+# cask "vlc"
+# cask "google-chrome"
 cask "appcleaner"
 cask "monitorcontrol"
 cask "karabiner-elements"
