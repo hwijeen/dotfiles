@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>19B88</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Apptivate</string>
+	<key>CFBundleIconFile</key>
+	<string>Apptivate</string>
+	<key>CFBundleIdentifier</key>
+	<string>se.cocoabeans.apptivate</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Apptivate</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.2.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>15</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>12B45b</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>11.0</string>
+	<key>DTSDKBuild</key>
+	<string>20A2408</string>
+	<key>DTSDKName</key>
+	<string>macosx11.0</string>
+	<key>DTXcode</key>
+	<string>1220</string>
+	<key>DTXcodeBuild</key>
+	<string>12B45b</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.9</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Apptivate can communicate with other apps through scripts that you add.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© Cocoabeans Software, 2020</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSRequiresAquaSystemAppearance</key>
+	<true/>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Add to Apptivate</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>runServiceCode</string>
+			<key>NSPortName</key>
+			<string>Apptivate</string>
+			<key>NSRequiredContext</key>
+			<array/>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSURLPboardType</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

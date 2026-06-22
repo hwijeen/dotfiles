@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TARubyLaunchPath</key>
+	<string>/usr/bin/ruby</string>
+	<key>TAPythonLaunchPath</key>
+	<string>/usr/bin/python</string>
+	<key>TAShellLaunchPath</key>
+	<string>/bin/sh</string>
+	<key>TAShowStatusbarIcon</key>
+	<true/>
+	<key>TAResizeWindowToFitItems</key>
+	<false/>
+	<key>TASuggestionsDelay</key>
+	<real>0.5</real>
+	<key>TAHasStartedBefore</key>
+	<false/>
+</dict>
+</plist>
