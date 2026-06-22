@@ -1,7 +1,0 @@
-Host lusaka
-    HostName 128.2.7.6
-    User hwijeen
-
-Host babel
-    HostName babel.lti.cs.cmu.edu
-    User hahn2
