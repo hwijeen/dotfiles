@@ -15,7 +15,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM1:-$ZSH/custom}/plugins/alias-tips
+git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugin/alias-tips
 # export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
 ```
 
@@ -26,7 +26,7 @@ git clone https://github.com/djui/alias-tips.git ${ZSH_CUSTOM1:-$ZSH/custom}/plu
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
 brew doctor
 brew update
-brew bundle --file=dotfiles/.brewfile
+brew bundle install --file=dotfiles/.brewfile
 ```
 
 
