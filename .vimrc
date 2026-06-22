@@ -55,7 +55,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'xolox/vim-misc' " required by vim-session
 Plug 'xolox/vim-session'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
