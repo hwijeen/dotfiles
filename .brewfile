@@ -21,3 +21,4 @@ cask "monitorcontrol"
 cask "karabiner-elements"
 cask "arc"
 cask "rectangle"
+cask caffeine
