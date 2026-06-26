@@ -41,4 +41,11 @@ bash Mambaforge-$(uname)-$(uname -m).sh
 # fzf  # TODO maybe through mamba or something..
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+# brew
+mkdir -p ~/.local/Homebrew &&
+curl -L https://github.com/Homebrew/brew/tarball/master |
+tar xz --strip 1 -C ~/.local/Homebrew
+mkdir -p ~/.local/bin &&
+ln -s ~/.local/Homebrew/bin/brew ~/.local/bin
 ```
