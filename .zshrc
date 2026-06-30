@@ -123,3 +123,5 @@ svim() {
 svim_err() {
     vim $(scontrol show job $1 | grep -oP "StdErr=\K.*")
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

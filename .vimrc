@@ -206,6 +206,8 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 cnoreabbrev fd filetype detect
+cnoreabbrev cdg Cdg
+command! Cdg cd `git rev-parse --show-toplevel`
 
 cnoreabbrev vterm vert term
 
