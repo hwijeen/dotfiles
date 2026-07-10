@@ -52,6 +52,11 @@ if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile;
 fi
 
+# add ~/bin to PATH (personal scripts: copilot-slack, copilot-snapshot/restore, etc.)
+if [ -d "$HOME/bin" ] && [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # User configuration
 # Vim binding in shell
 set -o vi
