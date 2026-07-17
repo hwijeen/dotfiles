@@ -207,7 +207,37 @@ cnoreabbrev Qall qall
 
 cnoreabbrev fd filetype detect
 cnoreabbrev cdg Cdg
-command! Cdg cd `git rev-parse --show-toplevel`
+command! Cdg call s:Cdg()
+
+function! s:SetJediEnvFromGitRoot(path)
+  let l:dir = empty(a:path) ? getcwd() : fnamemodify(a:path, ':p:h')
+  let l:root = get(systemlist('git -C ' . shellescape(l:dir) . ' rev-parse --show-toplevel'), 0, '')
+  if v:shell_error || empty(l:root)
+    return
+  endif
+  if isdirectory(l:root . '/.venv')
+    let g:jedi#environment_path = l:root . '/.venv'
+  endif
+endfunction
+
+function! s:Cdg()
+  let l:root = systemlist('git rev-parse --show-toplevel')[0]
+  if v:shell_error
+    echoerr 'Not inside a git worktree'
+    return
+  endif
+  if exists(':gcd')
+    execute 'gcd' fnameescape(l:root)
+  else
+    execute 'cd' fnameescape(l:root)
+  endif
+  let g:jedi#environment_path = l:root . '/.venv'
+endfunction
+
+augroup jedi_env_from_git_root
+  autocmd!
+  autocmd BufReadPost,BufNewFile *.py call s:SetJediEnvFromGitRoot(expand('<afile>:p'))
+augroup END
 
 cnoreabbrev vterm vert term
 
