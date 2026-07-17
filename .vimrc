@@ -493,8 +493,8 @@ let g:airline_section_z = '' " turn off current position
 
 let g:tmuxline_preset = {
     \'a'       : '#S',
-    \'win'     : ['#I', '#W'],
-    \'cwin'    : ['#I', '#W #F'],
+    \'win'     : ['#I', '#{?@pin,#[underscore]#W#[nounderscore],#W}'],
+    \'cwin'    : ['#I', '#{?@pin,#[underscore]#W#[nounderscore],#W} #F'],
     \'y'       : '%Y-%m-%d %R',
     \'z'       : '#(bash ~/dotfiles/tmux_hostname/hostname.sh)',
     \'options' : {'status-justify' : 'left'}}
